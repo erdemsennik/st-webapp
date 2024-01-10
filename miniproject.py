@@ -2,8 +2,8 @@ import streamlit as st
 import pandas as pd 
 import numpy as np 
 # import matplotlib.pyplot as plt 
-import seaborn as sns
-import math 
+# import seaborn as sns
+# import math 
 
 # # Title
 # st.title('Webapp using Streamlit')
