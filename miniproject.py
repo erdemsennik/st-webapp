@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd 
 import numpy as np 
-import matplotlib.pyplot as plt 
+# import matplotlib.pyplot as plt 
 import seaborn as sns
 import math 
 
@@ -57,26 +57,26 @@ if menu =='Graphs':
     st.header('Statistical Summary of dataframe')
     if st.checkbox('Statistic'):
         st.table(data.describe())
-    if st.header("Correlation Graph"):
-        fig, ax = plt.subplots(figsize=(5,2.5))
-        # sns.heatmap(data.corr(),annot=Tru, cmap='coolwarm')
-        st.pyplot(fig)
+    # if st.header("Correlation Graph"):
+    #     fig, ax = plt.subplots(figsize=(5,2.5))
+    #     # sns.heatmap(data.corr(),annot=Tru, cmap='coolwarm')
+    #     st.pyplot(fig)
     st.title('Graphs')
-    graph = st.selectbox('Different type of graphs',['Scatter', 'Bar', 'Histogram'])
-    if graph =='Scatter':
-        value = st.slider('Filter data using carat', 0, 6)
-        data = data.loc[data['carat']>=value]
-        fig , ax = plt.subplots(figsize=(10,5))
-        sns.scatterplot(data = data, x='carat', y='price', hue='cut')
-        st.pyplot(fig)
-    if graph =='Bar':
-        fig, ax = plt.subplots(figsize=(3.5,2))
-        sns.barplotplot(x='cut', y=data.cut.index, data = data)
-        st.pyplot(fig)
-    if graph =='Histogram':
-        fig, ax = plt.subplots(figsize=(5,3))
-        sns.displot(data.price, kde=True)
-        st.pyplot(fig)
+    # graph = st.selectbox('Different type of graphs',['Scatter', 'Bar', 'Histogram'])
+    # if graph =='Scatter':
+    #     value = st.slider('Filter data using carat', 0, 6)
+    #     data = data.loc[data['carat']>=value]
+    #     fig , ax = plt.subplots(figsize=(10,5))
+    #     sns.scatterplot(data = data, x='carat', y='price', hue='cut')
+    #     st.pyplot(fig)
+    # if graph =='Bar':
+    #     fig, ax = plt.subplots(figsize=(3.5,2))
+    #     sns.barplotplot(x='cut', y=data.cut.index, data = data)
+    #     st.pyplot(fig)
+    # if graph =='Histogram':
+    #     fig, ax = plt.subplots(figsize=(5,3))
+    #     sns.displot(data.price, kde=True)
+    #     st.pyplot(fig)
 
 if menu =='Churn Prediction':
     st.title('Churn Prediction')
