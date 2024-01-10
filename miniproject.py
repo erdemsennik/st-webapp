@@ -1,7 +1,8 @@
 import streamlit as st
 import pandas as pd 
 import numpy as np
-from sklearn import preprocessing
+import sklearn
+from sklearn.preprocessing import LabelEncoder
 # from sklearn.preprocessing import LabelEncoder 
 # import matplotlib.pyplot as plt 
 # import seaborn as sns
@@ -88,11 +89,11 @@ if menu =='Churn Prediction':
     # from sklearn.svm import SVC
     # from sklearn.ensemble import RandomForestClassifier
     
-    le_con = preprocessing.LabelEncoder()
-    le_dep = preprocessing.LabelEncoder()
-    le_mar = preprocessing.LabelEncoder()
-    le_pre = preprocessing.LabelEncoder()
-    le_ref = preprocessing.LabelEncoder()
+    le_con = LabelEncoder()
+    le_dep = LabelEncoder()
+    le_mar = LabelEncoder()
+    le_pre = LabelEncoder()
+    le_ref = LabelEncoder()
     data['Contract'] = le_con.fit_transform(data['Contract'])
     data['Dependents'] = le_dep.fit_transform(data['Dependents'])
     data['Married'] = le_mar.fit_transform(data['Married'])
