@@ -13,7 +13,7 @@ import numpy as np
 # st.image("Normalized Stacked Pie-Chart&Churn.jpg", width = 500)
 
 data = pd.read_csv('df_end.csv')
-raw_data = pd.read_csv('df_last.csv')
+# raw_data = pd.read_csv('df_last.csv')
 # st.write("Shape of dataset", data.shape)
 # st.write(data.head(5))
 menu = st.sidebar.radio('Menu', ['Introduction', 'Graphs', 'Churn Prediction'])
