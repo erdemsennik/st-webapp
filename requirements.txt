@@ -3,7 +3,7 @@ numpy
 streamlit
 seaborn
 matplotlib
-scikit-learn
+scikit_learn
 joblib
 sklearn
 
