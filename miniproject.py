@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd 
 import numpy as np 
 # from sklearn import preprocessing
-# from sklearn.preprocessing import LabelEncoder
+from sklearn.preprocessing import LabelEncoder
 # # from sklearn.preprocessing import LabelEncoder 
 # import matplotlib.pyplot as plt 
 # import seaborn as sns
@@ -89,123 +89,123 @@ if menu =='Churn Prediction':
     # from sklearn.svm import SVC
     # from sklearn.ensemble import RandomForestClassifier
     
-#     le_con = LabelEncoder()
-#     le_dep = LabelEncoder()
-#     le_mar = LabelEncoder()
-#     le_pre = LabelEncoder()
-#     le_ref = LabelEncoder()
-#     data['Contract'] = le_con.fit_transform(data['Contract'])
-#     data['Dependents'] = le_dep.fit_transform(data['Dependents'])
-#     data['Married'] = le_mar.fit_transform(data['Married'])
-#     data['Premium Tech Support'] = le_pre.fit_transform(data['Premium Tech Support'])
-#     data['Referred a Friend'] = le_ref.fit_transform(data['Referred a Friend'])
-#     # from sklearn.ensemble import GradientBoostingClassifier
+    le_con = LabelEncoder()
+    le_dep = LabelEncoder()
+    le_mar = LabelEncoder()
+    le_pre = LabelEncoder()
+    le_ref = LabelEncoder()
+    data['Contract'] = le_con.fit_transform(data['Contract'])
+    data['Dependents'] = le_dep.fit_transform(data['Dependents'])
+    data['Married'] = le_mar.fit_transform(data['Married'])
+    data['Premium Tech Support'] = le_pre.fit_transform(data['Premium Tech Support'])
+    data['Referred a Friend'] = le_ref.fit_transform(data['Referred a Friend'])
+    # from sklearn.ensemble import GradientBoostingClassifier
 
 #     # st.write("Data from the begining to see the churn variable is 'Yes'")
 #     # st.table(raw_data.head(5))
 #     # st.write("Data from the end to see the churn variable is 'No'")
 #     # st.table(raw_data.tail(5))
 
-#     ###
-#     # Create a rf
-#     from sklearn.ensemble import RandomForestClassifier
-#     rf = RandomForestClassifier()
-#     # select independent variables
-#     X = data.drop(columns='Churn')
-#     # select dependent variables
-#     y = data.loc[:, 'Churn']
+    ###
+    # Create a rf
+    from sklearn.ensemble import RandomForestClassifier
+    rf = RandomForestClassifier()
+    # select independent variables
+    X = data.drop(columns='Churn')
+    # select dependent variables
+    y = data.loc[:, 'Churn']
 
-#     # from sklearn.model_selection import train_test_split
+    # from sklearn.model_selection import train_test_split
 
-#     # # split the data in training and testing sets
-#     # X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2,
-#     #                                                 random_state=40, shuffle=True)
-#     # # fitting the model for random search 
-#     # mdl = rf.fit(X_train, y_train)
-#     ###
+    # # split the data in training and testing sets
+    # X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2,
+    #                                                 random_state=40, shuffle=True)
+    # # fitting the model for random search 
+    # mdl = rf.fit(X_train, y_train)
+    ###
 
-#     mdl = rf.fit(X, y)
+    mdl = rf.fit(X, y)
 
-#     Age = np.arange(81, 19, -1).tolist()
-#     age = st.selectbox("Age", Age)
+    Age = np.arange(81, 19, -1).tolist()
+    age = st.selectbox("Age", Age)
 
-#     Number_of_Referrals = np.arange(0, 12, 1).tolist()
-#     number_of_referrals = st.selectbox("Number of Referrals", Number_of_Referrals)
+    Number_of_Referrals = np.arange(0, 12, 1).tolist()
+    number_of_referrals = st.selectbox("Number of Referrals", Number_of_Referrals)
 
-#     Contract = ('Month-to-month', 'One year', 'Two year')
-#     contract = st.selectbox("Contract", Contract)
+    Contract = ('Month-to-month', 'One year', 'Two year')
+    contract = st.selectbox("Contract", Contract)
 
-#     Dependents = ('Yes', 'No')
-#     dependents = st.selectbox("Dependents", Dependents)
+    Dependents = ('Yes', 'No')
+    dependents = st.selectbox("Dependents", Dependents)
 
-#     Married = ('Yes', 'No')
-#     married = st.selectbox("Married", Married)
+    Married = ('Yes', 'No')
+    married = st.selectbox("Married", Married)
 
-#     Premium_Tech_Support = ('Yes', 'No')
-#     premium_tech_support = st.selectbox("Premium_Tech_Support", Premium_Tech_Support)
+    Premium_Tech_Support = ('Yes', 'No')
+    premium_tech_support = st.selectbox("Premium_Tech_Support", Premium_Tech_Support)
 
-#     Referred_a_Friend = ('Yes', 'No')
-#     referred_a_friend = st.selectbox("Reffered a Friend", Referred_a_Friend)
+    Referred_a_Friend = ('Yes', 'No')
+    referred_a_friend = st.selectbox("Reffered a Friend", Referred_a_Friend)
     
 
-#     ok = st.button("Predict Churn Possibility")
-#     if ok:
+    ok = st.button("Predict Churn Possibility")
+    if ok:
 
-#         # from sklearn.ensemble import RandomForestClassifier
-#         # from sklearn.preprocessing import LabelEncoder
-#         # le_cat = LabelEncoder()
-#         # data['Contract'] = le_cat.fit_transform(data['Contract'])
-#         # data['Dependents'] = le_cat.fit_transform(data['Dependents'])
-#         # data['Married'] = le_cat.fit_transform(data['Married'])
-#         # data['Premium Tech Support'] = le_cat.fit_transform(data['Premium Tech Support'])
-#         # data['Referred a Friend'] = le_cat.fit_transform(data['Referred a Friend'])
+        # from sklearn.ensemble import RandomForestClassifier
+        # from sklearn.preprocessing import LabelEncoder
+        # le_cat = LabelEncoder()
+        # data['Contract'] = le_cat.fit_transform(data['Contract'])
+        # data['Dependents'] = le_cat.fit_transform(data['Dependents'])
+        # data['Married'] = le_cat.fit_transform(data['Married'])
+        # data['Premium Tech Support'] = le_cat.fit_transform(data['Premium Tech Support'])
+        # data['Referred a Friend'] = le_cat.fit_transform(data['Referred a Friend'])
 
-#         Xtest = np.array([[age, number_of_referrals, contract, dependents, married, premium_tech_support, referred_a_friend]])
-#         Xtest[:, 2] = le_con.transform(Xtest[:, 2])
-#         Xtest[:, 3] = le_dep.transform(Xtest[:, 3])
-#         Xtest[:, 4] = le_mar.transform(Xtest[:, 4])
-#         # X[:, 3] = le_offer.transform(Xtest[:, 3])
-#         Xtest[:, 5] = le_pre.transform(Xtest[:, 5])
-#         Xtest[:, 6] = le_ref.transform(Xtest[:, 6])
-#         # X[:, 6] = le_udata.transform(Xtest[:, 6])
+        Xtest = np.array([[age, number_of_referrals, contract, dependents, married, premium_tech_support, referred_a_friend]])
+        Xtest[:, 2] = le_con.transform(Xtest[:, 2])
+        Xtest[:, 3] = le_dep.transform(Xtest[:, 3])
+        Xtest[:, 4] = le_mar.transform(Xtest[:, 4])
+        # X[:, 3] = le_offer.transform(Xtest[:, 3])
+        Xtest[:, 5] = le_pre.transform(Xtest[:, 5])
+        Xtest[:, 6] = le_ref.transform(Xtest[:, 6])
+        # X[:, 6] = le_udata.transform(Xtest[:, 6])
 
-#         # X = X.astype(float)
-#         # st.write(f'{Xtest[:, 2]}')
-#         # st.write(f'{Xtest}')
+        # X = X.astype(float)
+        # st.write(f'{Xtest[:, 2]}')
+        # st.write(f'{Xtest}')
         
-#     #     one_hot_encoding_columns = ['Contract', 'Dependents', 'Married', 'Offer', 'Premium Tech Support',
-#     #    'Referred a Friend', 'Unlimited Data']
+    #     one_hot_encoding_columns = ['Contract', 'Dependents', 'Married', 'Offer', 'Premium Tech Support',
+    #    'Referred a Friend', 'Unlimited Data']
 
-#     #     # encode categorical variables with more than two levels using one-hot encoding
-#         # X_test = pd.get_dummies(X)
+    #     # encode categorical variables with more than two levels using one-hot encoding
+        # X_test = pd.get_dummies(X)
 
-#         # prediction = data['model'].predict(X)
-#         prediction = mdl.predict(Xtest)
-        
-
-#         from sklearn.metrics import accuracy_score
-#         # accuracy = accuracy_score(y, mdl.predict(Xtest))
-
-#         # st.write(f'{prediction}')
-
-#         if prediction == ['No']:
-#             st.write(f"The customer will more likely not Churn.")
-#         else:
-#             st.write(f"The customer will more likely Churn.")
-
-#         # # # random_search_predictions = model_loaded.predict(X)
-#         # # # # accuracy_score(y_test, random_search_predictions)
+        # prediction = data['model'].predict(X)
+        prediction = mdl.predict(Xtest)
         
 
+        from sklearn.metrics import accuracy_score
+        # accuracy = accuracy_score(y, mdl.predict(Xtest))
 
-#     # value = st.number_input('Age', 19, 60, step=1)
-#     # value = np.array(value).reshape(-1, 1)
-#     # predictions = rf.predict(value)[0]
-#     # if st.button('price prediction($)'):
-#     #     st.write(f'{predictions}')
+        # st.write(f'{prediction}')
 
-# # # calculate accuracy 
-# # score = f1_score(y_test, praedictions, pos_label='No')
-# # score
+        if prediction == ['No']:
+            st.write(f"The customer will more likely not Churn.")
+        else:
+            st.write(f"The customer will more likely Churn.")
 
-# # ###
+        # # # random_search_predictions = model_loaded.predict(X)
+        # # # # accuracy_score(y_test, random_search_predictions)
+        
+
+
+    # value = st.number_input('Age', 19, 60, step=1)
+    # value = np.array(value).reshape(-1, 1)
+    # predictions = rf.predict(value)[0]
+    # if st.button('price prediction($)'):
+    #     st.write(f'{predictions}')
+
+# # calculate accuracy 
+# score = f1_score(y_test, praedictions, pos_label='No')
+# score
+
+# ###
