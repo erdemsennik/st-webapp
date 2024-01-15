@@ -111,3 +111,5 @@ if menu =='Churn Prediction':
             st.write(f"The customer will more likely Churn.")
 
         
+if __name__ == '__main__':
+	main()
