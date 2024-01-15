@@ -1,15 +1,19 @@
 import streamlit as st
 import pandas as pd 
 import numpy as np 
-import pickle
-import sklearn
+import joblib 
+# import pickle
+# import sklearn
 
 
 def load_model():
-    with open('rf_model_steps.pkl', 'rb') as file:
-        data = pickle.load(file)
+    with open('rf_model.sav', 'rb') as file:
+        data = joblib.load(file)
     return data
-
+# def load_model():
+#     with open('rf_model_steps.pkl', 'rb') as file:
+#         data = pickle.load(file)
+#     return data
 data = load_model()
 
 rf_model = data['model']
