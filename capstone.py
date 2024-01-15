@@ -24,18 +24,19 @@ le_pre = data['le_pre']
 le_ref = data['le_ref']
 
 
-menu = st.sidebar.radio('Menu', ['Introduction', 'Graphs', 'Churn Prediction'])
-if menu =='Introduction':
-    # # Title
-    # st.title('A Web-App Study for Predicting Telco Customer Churn')
-    # st.write("Forecasting customer churn is pivotal for telecommunication companies in effectively retaining their customer base. The expense of acquiring new customers surpasses that of retaining existing ones. Consequently, major telecommunications corporations are actively pursuing the development of predictive models to identify customers who are more likely to switch providers, enabling proactive measures to be taken in response.")
-    # st.write("Within this web application, an analysis of some features from the dataset was conducted to assess their influence on the likelihood of customer churn.")
-    # # Image
-    # st.image("Normalized Stacked Pie-Chart&Churn.jpg", width = 500)
-    # # Explanation
-    # st.write("The pie-chart above shows the distribution of observations across the response variable's classes: **No** and **Yes**. This dataset exhibits an imbalance since both classes are not evenly distributed among all observations. The no class constitutes the majority (73.5%). This imbalance can result in a significant number of false negatives during modeling.")
+# menu = st.sidebar.radio('Menu', ['Introduction', 'Graphs', 'Churn Prediction'])
+menu = st.sidebar.radio('Menu', ['Churn Prediction'])
+# if menu =='Introduction':
+#     # # Title
+#     # st.title('A Web-App Study for Predicting Telco Customer Churn')
+#     # st.write("Forecasting customer churn is pivotal for telecommunication companies in effectively retaining their customer base. The expense of acquiring new customers surpasses that of retaining existing ones. Consequently, major telecommunications corporations are actively pursuing the development of predictive models to identify customers who are more likely to switch providers, enabling proactive measures to be taken in response.")
+#     # st.write("Within this web application, an analysis of some features from the dataset was conducted to assess their influence on the likelihood of customer churn.")
+#     # # Image
+#     # st.image("Normalized Stacked Pie-Chart&Churn.jpg", width = 500)
+#     # # Explanation
+#     # st.write("The pie-chart above shows the distribution of observations across the response variable's classes: **No** and **Yes**. This dataset exhibits an imbalance since both classes are not evenly distributed among all observations. The no class constitutes the majority (73.5%). This imbalance can result in a significant number of false negatives during modeling.")
     
-if menu =='Graphs':
+# if menu =='Graphs':
     # st.header('Stacked Graphs')
     # st.write('A normalized stacked bar plot ensures uniform column height. Nevertheless, it excels in illustrating the variation of the response variable across different groups of an independent variable.')
     # st.markdown("**o** The churn rate of the customer is increasing by increment of age when looking at the graph below. That might show that it is difficult to pertain elder customers into the system for a long time.")
