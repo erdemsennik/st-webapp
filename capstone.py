@@ -1,14 +1,20 @@
 import streamlit as st
 import pandas as pd 
-import numpy as np 
-import joblib 
+import numpy as np
+# import joblib 
 import pickle
 # import sklearn
 
+
+# def load_model():
+#     with open('rf_model.sav', 'rb') as file:
+#         data = joblib.load(file)
+#     return data
 def load_model():
     with open('rf_model_steps.pkl', 'rb') as file:
         data = pickle.load(file)
     return data
+
 data = load_model()
 
 rf_model = data['model']
@@ -20,7 +26,6 @@ le_ref = data['le_ref']
 
 
 menu = st.sidebar.radio('Menu', ['Introduction', 'Graphs', 'Churn Prediction'])
-
 if menu =='Introduction':
     # Title
     st.title('A Web-App Study for Predicting Telco Customer Churn')
@@ -48,7 +53,7 @@ if menu =='Graphs':
     st.image('Stacked_Premium Tech Support&Churn.jpg',width=600)
     st.image('Stacked_Referred a Friend&Churn.jpg',width=600)
     st.markdown('**o** Customers who have contracts')
-  
+    
 if menu =='Churn Prediction':
     st.title('Churn Prediction')
 
@@ -98,4 +103,4 @@ if menu =='Churn Prediction':
         else:
             st.write(f"The customer will more likely Churn.")
 
-
+        
